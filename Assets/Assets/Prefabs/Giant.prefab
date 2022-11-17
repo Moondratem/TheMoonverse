@@ -158,5 +158,5 @@ MonoBehaviour:
   GoldCrystal: {fileID: -7656961586761148961, guid: d101949363d3fdc44b83db74e5de2f85, type: 3}
   Void: {fileID: 4512323878911581255, guid: 04b89904059465e4f829103b4dba20e3, type: 3}
   isChasing: 1
-  enemyHP: 6
+  enemyHP: 10
   knifePrefab: {fileID: 390978487206394436, guid: cec0f0c8363341245a5241f421e71cfd, type: 3}
