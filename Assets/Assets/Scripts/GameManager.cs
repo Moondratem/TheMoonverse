@@ -41,30 +41,41 @@ public class GameManager : MonoBehaviour
     IEnumerator SpawnEnemiesCoroutine()
     {
         yield return new WaitForSeconds(5f);
-        SpawnEnemies(Giant, 2);
-        yield return new WaitForSeconds(5f);
-        SpawnEnemies(sirmer, 20);
+        SpawnEnemies(merman, 1);
+        SpawnEnemies(vampire, 1);
+        SpawnEnemies(sirmer, 2);
+        SpawnEnemies(zombie, 1);
+        yield return new WaitForSeconds(10f);
+        SpawnEnemies(vampire, 1);
+        SpawnEnemies(zombie, 3);
+        SpawnEnemies(merman, 1);
+        yield return new WaitForSeconds(10f);
+        SpawnEnemies(merman, 10, false);
+        SpawnEnemies(zombie, 10, false);
+        yield return new WaitForSeconds(10f);
+        SpawnEnemies(zombie, 2);
+        SpawnEnemies(merman, 1);
+        SpawnEnemies(vampire, 2);
+        yield return new WaitForSeconds(10f);
+        SpawnEnemies(zombie, 1);
+        SpawnEnemies(merman, 3);
+        SpawnEnemies(sirmer, 1);
+        yield return new WaitForSeconds(10f);
+        SpawnEnemies(zombie, 15, false);
+        SpawnEnemies(vampire, 15, false);
+        yield return new WaitForSeconds(10f); 
+        SpawnEnemies(zombie, 8);
+        SpawnEnemies(vampire, 1);
+        yield return new WaitForSeconds(20f);
+        SpawnEnemies(merman, 4);
+        SpawnEnemies(sirmer, 6, false);
         yield return new WaitForSeconds(20f);
         SpawnEnemies(merman, 5, false);
-        yield return new WaitForSeconds(5f);
-        SpawnEnemies(zombie, 5);
-        yield return new WaitForSeconds(5f);
-        SpawnEnemies(zombie, 10);
-        yield return new WaitForSeconds(10f);
-        SpawnEnemies(vampire, 5);
-        yield return new WaitForSeconds(10f);
-        SpawnEnemies(vampire, 5, false);
-        yield return new WaitForSeconds(10f); 
-        SpawnEnemies(sirmer, 1);
-        yield return new WaitForSeconds(20f);
-        SpawnEnemies(merman, 10);
-        SpawnEnemies(vampire, 10, false);
-        yield return new WaitForSeconds(20f);
-        SpawnEnemies(merman, 15, false);
         SpawnEnemies(zombie, 15);
+        SpawnEnemies(sirmer, 5);
         yield return new WaitForSeconds(20f);
-        SpawnEnemies(vampire, 10);
-        SpawnEnemies(zombie, 20, false);
+        SpawnEnemies(vampire, 20);
+        SpawnEnemies(sirmer, 5, false);
         yield return new WaitForSeconds(20f);
         SpawnEnemies(vampire, 25, false);
         SpawnEnemies(sirmer, 3);
@@ -96,15 +107,9 @@ public class GameManager : MonoBehaviour
         SpawnEnemies(merman, 20, false);
         SpawnEnemies(zombie, 20, false);
         SpawnEnemies(zombie, 20, false);
-
-        while (true)
-        {
-            yield return new WaitForSeconds(20f);
-            SpawnEnemies(sirmer, 10);
-            SpawnEnemies(merman, 20, false);
-            SpawnEnemies(zombie, 20, false);
-            SpawnEnemies(zombie, 20, false);
-        }
+        yield return new WaitForSeconds(10f);
+        Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+        SpawnEnemies(Giant, 1);
     }
 
     private void SpawnEnemies(GameObject enemyToSpawn, int numberofEnemies, bool isChasing = true)

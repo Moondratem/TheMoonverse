@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6494b5e5b652510468127beb457f4f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelMenu: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &4050319184011120494
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248559911776fa340b119db8db224e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelMenu: {fileID: 0}
   scythePrefab: {fileID: 0}
 --- !u!1 &4803860120099751220
 GameObject:
@@ -271,7 +274,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -936154363, guid: 56cf3ddf58d0b584ca0881313af57696, type: 3}
+  m_Sprite: {fileID: 1489618881, guid: 26eb4096c94c9374aa3cf67571da8245, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -295,18 +298,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.012514085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 1.09375}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.15, y: 0.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46875, y: 1.125}
+  m_Size: {x: 0.46875, y: 0.9664872}
   m_EdgeRadius: 0
 --- !u!95 &8615522272163104549
 Animator:
@@ -361,12 +364,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f18ec801aaa974aa6a01b3f085e4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoldValueTXT: {fileID: 0}
+  XPValueTXT: {fileID: 0}
   speed: 1
+  LevelMenu: {fileID: 0}
   weapons:
   - {fileID: 7731390437557038377}
   - {fileID: 231915500595978437}
   - {fileID: 8556914922614715933}
-  playerMaxHP: 5
+  DeadScreen: {fileID: 0}
+  UiScreen: {fileID: 0}
+  ps: {fileID: 0}
 --- !u!1 &7397701061213861883
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce64bf245fbf41545bfd4c468824b8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelMenu: {fileID: 0}
   lightningBombPrefab: {fileID: 0}
 --- !u!1 &8980770845900083548
 GameObject:
@@ -531,6 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6494b5e5b652510468127beb457f4f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelMenu: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &2936796261792259569
 BoxCollider2D:
   m_ObjectHideFlags: 0

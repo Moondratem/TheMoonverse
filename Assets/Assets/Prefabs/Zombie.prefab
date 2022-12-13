@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 2186240624174441656, guid: 09a58fe238305e04b90ed627900ce727, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8382904375570222995, guid: 09a58fe238305e04b90ed627900ce727, type: 3}
       propertyPath: enemyHP
       value: 3

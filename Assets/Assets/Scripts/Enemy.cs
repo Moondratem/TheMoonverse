@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -12,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     public bool isChasing = true;
     GameObject player;
-    [SerializeField] int enemyHP = 2;
+    [SerializeField] public int enemyHP = 2;
 
     public int EnemyHP { get => enemyHP; set => enemyHP = value; }
     public float Speed { get => speed; set => speed = value; }
@@ -53,13 +54,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public bool IsDead()
+    {
+        if(this.enemyHP <= 0)
+        {
+            return true;
+        }
+        return false;
+    }
     internal void Damage(int damage)
     {
-        float randomVar = Random.Range(0, 360);
         this.enemyHP -= damage;
-        if (this.enemyHP <= 0)
+        float randomVar = Random.Range(0, 360);
+        if (this.IsDead())
         {
-            if(randomVar >= 300)
+            StartCoroutine(DeathCoroutine());
+            /*if(randomVar >= 300)
             {
                 Instantiate(GoldCrystal, this.transform.position, Quaternion.identity);
 
@@ -73,7 +83,28 @@ public class Enemy : MonoBehaviour
                 Instantiate(Void, this.transform.position, Quaternion.identity);
             }
             Instantiate(crystalPrefab, this.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Destroy(gameObject);*/
         }
+    }
+
+    IEnumerator DeathCoroutine()
+    {
+        float randomVar = Random.Range(0, 360);
+        if (randomVar >= 300)
+        {
+            Instantiate(GoldCrystal, this.transform.position, Quaternion.identity);
+
+        }
+        else if (randomVar <= 90)
+        {
+            Instantiate(BloodCrystal, this.transform.position, Quaternion.identity);
+        }
+        else if (randomVar <= 5)
+        {
+            Instantiate(Void, this.transform.position, Quaternion.identity);
+        }
+        Instantiate(crystalPrefab, this.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

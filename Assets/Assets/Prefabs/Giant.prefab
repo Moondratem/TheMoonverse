@@ -158,5 +158,25 @@ MonoBehaviour:
   GoldCrystal: {fileID: -7656961586761148961, guid: d101949363d3fdc44b83db74e5de2f85, type: 3}
   Void: {fileID: 4512323878911581255, guid: 04b89904059465e4f829103b4dba20e3, type: 3}
   isChasing: 1
-  enemyHP: 10
+  enemyHP: 6
+  knifePrefab: {fileID: 390978487206394436, guid: cec0f0c8363341245a5241f421e71cfd, type: 3}
+--- !u!114 &-1755016310692022633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603501120758946594}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78ef3ed3b5a8e7478404c1cfec4ee72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  crystalPrefab: {fileID: 5018299393067730961, guid: a9f6cb35bc60cc643958a6681a4e2be8, type: 3}
+  BloodCrystal: {fileID: 5239452212267105827, guid: ead21ebae08192744972646f569fcee9, type: 3}
+  GoldCrystal: {fileID: -7656961586761148961, guid: d101949363d3fdc44b83db74e5de2f85, type: 3}
+  Void: {fileID: 4512323878911581255, guid: 04b89904059465e4f829103b4dba20e3, type: 3}
+  isChasing: 1
+  enemyHP: 6
   knifePrefab: {fileID: 390978487206394436, guid: cec0f0c8363341245a5241f421e71cfd, type: 3}

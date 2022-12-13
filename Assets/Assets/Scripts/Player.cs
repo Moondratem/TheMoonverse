@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] TMP_Text GoldValueTXT;
+    [SerializeField] TMP_Text XPValueTXT;
     [SerializeField] float speed = 1;
     [SerializeField] GameObject LevelMenu;
     [SerializeField] BaseWeapon[] weapons;
+    [SerializeField] GameObject DeadScreen;
+    [SerializeField] GameObject UiScreen;
     
     SpriteRenderer spriteRenderer;
     Animator animator;
@@ -16,8 +21,9 @@ public class Player : MonoBehaviour
     internal int playerMaxHP = 10;
     internal int playerHP;
     bool isInvincible;
-
     internal int currentExp;
+    internal int TotalXP;
+    internal int TotalGold;
     internal int expToLevel = 5;
     internal int currentLevel;
     internal int playerpower = 1;
@@ -43,6 +49,7 @@ public class Player : MonoBehaviour
     internal void AddExp()
     {
         currentExp++;
+        TotalXP++;
 
         if(currentExp >= expToLevel)
         {
@@ -60,11 +67,7 @@ public class Player : MonoBehaviour
     }
     internal void Big_Heal()
     {
-        if (this.playerHP < this.playerMaxHP)
-        {
-            this.playerHP += this.playerMaxHP / 2;
-            StartCoroutine(HealCoroutine());
-        }
+        TotalGold++;
     }
     internal void Heal()
     {
@@ -82,11 +85,16 @@ public class Player : MonoBehaviour
                         
             if (--playerHP <= 0)
             {
+                UiScreen.SetActive(false);
+                DeadScreen.SetActive(true);
                 //increase death count
                 TitleManager.saveData.deathCount++;                
-                SceneManager.LoadScene("Title");
             }
         }
+    }
+    public void OnRestartButtonClick()
+    {
+        SceneManager.LoadScene("Title");
     }
 
     IEnumerator InvincibilityCoroutine()
@@ -134,6 +142,12 @@ public class Player : MonoBehaviour
         
         //Running animation
         animator.SetBool("IsRunning", inputX != 0 || inputY != 0);
+
+        if(playerHP <= 0)
+        {
+            XPValueTXT.text = $"{TotalXP}";
+            GoldValueTXT.text = $"{TotalGold}";
+        }
     }
 
     

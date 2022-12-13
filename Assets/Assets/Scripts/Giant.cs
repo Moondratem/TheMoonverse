@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Giant : Enemy
 {
@@ -10,6 +11,7 @@ public class Giant : Enemy
     float waitTimer = 2f;
     GameObject player;
     [SerializeField] GameObject knifePrefab;
+    
     
     // Start is called before the first frame update
     protected override void Start()
@@ -52,6 +54,11 @@ public class Giant : Enemy
                 giantState = GiantState.Idle;
                 waitTimer = 3f;
                 break;
+        }
+
+        if(this.IsDead())
+        {
+            SceneManager.LoadScene("Title");
         }
     }
     public void SpawnKnife(int number)
